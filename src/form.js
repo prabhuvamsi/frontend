@@ -1,36 +1,53 @@
 import './App.css';
 import React, { useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Form1() {
-    const[formdata,setformdata]=useState({
-        name:"",
-        email:"",
-        password:""
+  const [formdata, setFormdata] = useState({ username: '', password: '' });
+  const navigate = useNavigate();
 
-    })
-    const handleSubmit=(e)=>{
-        e.preventDefault()
-        console.log(formdata)
-        axios.post('http://localhost:3002/adduserdata',formdata)
-    .then((response)=>{
-        console.log( response.data)
-    } )
-    .catch((error)=>{
-    console.log(error)
-    })
+  const handleRegister = async (e) => {
+    e.preventDefault()
+    try {
+      await axios.post('http://localhost:3002/register', formdata);
+      alert('Registration successful');
+      console.log(formdata)
+      setFormdata({
+        username:"",
+        password:""
+      })
+    } catch (error) {
+      alert('Registration failed');
     }
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault()
+     
+    try {
+      await axios.post('http://localhost:3002/login', formdata);
+      setFormdata({
+        username:"",
+        password:""
+      })
+      alert('Login successful');
+
+      navigate('home');
+    } catch (error) {
+      alert('Login failed');
+    }
+  };
   return (
     <center className='body'><div className="main">
       <input type="checkbox" id="chk" aria-hidden="true" />
       <div className="signup">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleRegister}>
           <label htmlFor="chk" aria-hidden="true">
             Sign up
           </label>
-        <input type='text' value={formdata.name} placeholder='fullname' name='name' onChange={(e)=>setformdata({...formdata,name:e.target.value})}></input><br/>
-        <input type='email' value={formdata.email} placeholder='Email' name='email' onChange={(e)=>setformdata({...formdata,email:e.target.value})}></input><br/>
-        <input type='password' value={formdata.password} placeholder='password' name='password' onChange={(e)=>setformdata({...formdata,password:e.target.value})}></input>
+        <input type='text'  placeholder='fullname' name='username' onChange={(e)=>setFormdata({...formdata,username:e.target.value})}></input><br/>
+        <input type='password' placeholder='password' name='password' onChange={(e)=>setFormdata({...formdata,password:e.target.value})}></input>
           <button className='button' type="submit">Sign up</button>
         </form>
       </div>
@@ -39,9 +56,9 @@ function Form1() {
           <label htmlFor="chk" aria-hidden="true">
             Login
           </label>
-          <input type="email" name="email" placeholder="Email" required />
-          <input type="password" name="pswd" placeholder="Password" required />
-          <button className='button' type="submit">Login</button>
+          <input type="text" name="username" placeholder="username" onChange={(e)=>setFormdata({...formdata,username:e.target.value})}/>
+          <input type="password" name="pswd" placeholder="Password" onChange={(e)=>setFormdata({...formdata,password:e.target.value})}/>
+         <button className='button' type="submit" onClick={handleLogin}>Login</button>
         </form>
       </div>
     </div></center>

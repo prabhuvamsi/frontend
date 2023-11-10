@@ -1,33 +1,36 @@
 import React from 'react';
 import './App.css';
 import Home from './home';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FlipCardComponent from './sample';
 import Form from './form';
 import Card from './product';
-import Cart from './cart';
 import Pv from './pv';
-
+import Pvs from './pvs';
+import StudentLists from './pvslistr';
+import Borrow from './borrow';
+import Arrow from './check';
+import JournalData from './journalData'
 
 
 function App() {
   return (
-    <>
-    <BrowserRouter>
-    <Routes>
-      <Route>
-        <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/sample' element={<FlipCardComponent></FlipCardComponent>}></Route>
-        <Route path='/form' element={<Form></Form>}></Route>
-        <Route path='/product' element={<Card></Card>}></Route>
-        <Route path='/cart' element={<Cart></Cart>}></Route>
-       <Route path='/pv' element={<Pv></Pv>}></Route>
-      </Route>
-    </Routes>
-    </BrowserRouter>
+    <Router>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/sample" element={<FlipCardComponent />} />
+        <Route path="/" element={<Form />} />
+        <Route path="/product" element={<Card />} />
+        <Route path="/pv" element={<Pv />} />
+        <Route path="/pvs" element={<Pvs/>} />
+        <Route path="/cart" element={<StudentLists></StudentLists>} />
+        <Route path="/borrow" element={<Borrow></Borrow>} />
+        <Route path="/arrow" element={<Arrow></Arrow>} />
+        <Route path="/jd" element={<JournalData></JournalData>} />
 
-    
-    </>
+      
+      </Routes>
+    </Router>
   );
 }
 

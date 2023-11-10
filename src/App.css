@@ -57,8 +57,7 @@
   width: 100px;
   height: 40px; 
 }
-/* card */
-/* This pen */
+
 body {
 	font-family: "Baloo 2", cursive;
 	font-size: 16px;
@@ -69,6 +68,7 @@ body {
 
 .dark {
 	background: #110f16;
+	
 }
 
 
@@ -92,7 +92,6 @@ a, a:hover {
 .postcard {
   flex-wrap: wrap;
   display: flex;
-  
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
   border-radius: 10px;
   margin: 0 0 2rem 0;
@@ -136,9 +135,9 @@ a, a:hover {
     position: relative;
   }
 
-  .postcard__img_link {
+  /* .postcard__img_link {
     display: contents;
-  }
+  } */
 
   .postcard__bar {
     width: 50px;
@@ -424,17 +423,20 @@ a, a:hover {
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background-image: url("https://cdn.wallpapersafari.com/1/67/srtFq8.jpg");
+	background-size: cover	;
+	background-repeat: no-repeat;
+
 }
 .main{
 	width: 350px;
 	height: 500px;
 	background: red;
 	overflow: hidden;
-	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	
+	background: linear-gradient(to bottom, #302f2f, #060606, #242323);
 	font-family: 'Jost', sans-serif;
 }
 #chk{
@@ -488,7 +490,7 @@ button:hover{
 }
 .login{
 	height: 460px;
-	background: #eee;
+	background: #fffdfd;
 	border-radius: 60% / 10%;
 	transform: translateY(-180px);
 	transition: .8s ease-in-out;
@@ -506,4 +508,53 @@ button:hover{
 }
 #chk:checked ~ .signup label{
 	transform: scale(.6);
+}
+.logo {
+	width:179px;
+
+}
+.rs{
+    z-index: index 1;
+    /* background: linear-gradient(-45deg,red,green,blue,yellow); */
+    background-size: 400% 400%;
+   
+}
+.rr{
+    z-index: index 1;
+    /* background: linear-gradient(-45deg,orange,blue,brown,yellow); */
+    background-size: 400% 400%;
+
+      width: 100%;
+}
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.la{
+    font-size: 20px;
+}
+.rl{
+    color:'red';
+    /* background:linear-gradient(-45deg,pink,white,orange,yellow); */
+    animation: animate 5s ease infinite;
+}
+/* @keyframes animate {
+0%{
+    background-position: 0 50%;
+
+}   
+50%{
+    background-color: 100% 50%;
+} 
+100%{
+    background-color: 0 50%;
+}
+} */
+.card {
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }

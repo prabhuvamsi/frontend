@@ -1,13 +1,15 @@
-import React from 'react';
+import React  from 'react';
 import './App.css';
 import { Navbar, Nav } from 'react-bootstrap';
 import {Link} from "react-router-dom";
+import { Carousel } from 'react-bootstrap';
 function Home() {
+
   return (
     <>
       {/* Navbar */}
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Books</Navbar.Brand>
+        <Navbar.Brand href="#home"><img src="https://smartbooks.ph/img/smart-books-logo-svg.svg" alt=" " className="logo"/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
@@ -19,51 +21,18 @@ function Home() {
         </Navbar.Collapse>
       </Navbar>
       <center>
-      <button className='pvrs'>Books </button> 
-     <Link to={`/product`}><button  className='pvrs'>products</button> </Link> 
-      <button  className='pvrs'>online</button>
+     <Link to={`/product`}><button  className='pvrs'>Rentbooks</button> </Link>
+     <Link to={`/pvs`}><button  className='pvrs'>BuyBooks</button> </Link> 
       <Link to="/cart">
         <button className='pvrs'>Cart</button>
-      </Link>
-	  <Link to={`/form`}><button style={{  marginLeft:"30px",
-  borderRadius:"30px",
-  backgroundColor:"black" ,
-  color: "white",
-  width: "150px",
-  height: "40px"  }}>sign_up/login</button></Link>
-	  
+      </Link> 
+	  <Link to={`/logout`}  ><button className='pvrs'>logOut</button> </Link>
       </center>
-      {/* carousal */}
-      <div id="carouselExampleControls"  class="carousel slide" data-ride="carousel" >
-  <div class="carousel-inner" id='home'>
-    <div class="carousel-item active">
-      <img class="d-block w-100" className='pvk' src="1.jpg" alt="First slide"/>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" className='pvk' src="2.jpg" alt="Second slide"/>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100"  className='pvk' src="3.jpg" alt="Third slide"/>
-    </div>
-	<div class="carousel-item">
-      <img class="d-block w-100"  className='pvk' src="6.jpg" alt="Third slide"/>
-    </div>
-	<div class="carousel-item">
-      <img class="d-block w-100"  className='pvk' src="7.jpg" alt="Third slide"/>
-    </div>
-	<div class="carousel-item">
-      <img class="d-block w-100"  className='pvk' src="8.jpg" alt="Third slide"/>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+	  <Carousel style={{marginTop:"10px"}}>
+      <Carousel.Item>
+        <img className="d-block w-100" src="1.jpg" alt="First slide" />
+      </Carousel.Item>
+    </Carousel>
 <center><h3 style={{color:"black"}} id='trending'> trending</h3></center>
       {/* Flip Cards */}
       <div className="container-fluid"  style={{marginTop:"20px"}}>
@@ -202,8 +171,7 @@ function Home() {
       {/* cardhover */}
       <section class="dark" id='THRILLERS' style={{marginTop:"20px"}}>
 	<div class="container py-4">
-		<h1 class="h1 text-center"  id="pageHeaderTitle">Thrillers</h1>
-
+		<center> <h1>Thrillers</h1></center>
 		<article class="postcard dark blue">
 			<a class="postcard__img_link" href="# ">
 				<img class="postcard__img" src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1668422446i/63267634.jpg" alt="" />
@@ -218,11 +186,11 @@ function Home() {
 				<div class="postcard__bar"></div>
 				<div class="postcard__preview-txt">Nikki Smith studied English Literature at Birmingham University, before pursuing a career in finance. Following a ‘now or never’ moment, she applied for a Curtis Brown Creative course where she started writing her debut novel ALL IN HER HEAD which was published in April 2020. Her second novel, LOOK WHAT YOU MADE ME DO was published in April 2021 and both books have been optioned for TV.
 
-THE BEACH PARTY will be published by Viking in July 2023.
+				THE BEACH PARTY will be published by Viking in July 2023.
 
-Nikki lives near Guildford with her family and a cat who thinks she’s a dog.
+				Nikki lives near Guildford with her family and a cat who thinks she’s a dog.
 
-You can find out more about her on her website www.nikkismithauthor.com & she's active on twitter as @mrssmithmunday</div>
+				You can find out more about her on her website www.nikkismithauthor.com & she's active on twitter as @mrssmithmunday</div>
 				<ul class="postcard__tagbox">
 					<li class="tag__item"><i class="fas fa-tag mr-2"></i>The Beach Party</li>
 					<li class="tag__item"><i class="fas fa-tag mr-2"></i>publish July 2023 </li>
@@ -245,15 +213,13 @@ You can find out more about her on her website www.nikkismithauthor.com & she's 
 				<div class="postcard__bar"></div>
 				<div class="postcard__preview-txt">The definitive firsthand account of the groundbreaking research of Philip Zimbardo—the basis for the award-winning film The Stanford Prison Experiment
 
-Renowned social psychologist and creator of the Stanford Prison Experiment Philip Zimbardo explores the mechanisms that make good people do bad things, how moral people can be seduced into acting immorally, and what this says about the line separating good from evil.
+					Renowned social psychologist and creator of the Stanford Prison Experiment Philip Zimbardo explores the mechanisms that make good people do bad things, how moral people can be seduced into acting immorally, and what this says about the line separating good from evil.
 
-The Lucifer Effect explains how—and the myriad reasons why—we are all susceptible to the lure of “the dark side.” Drawing on examples from history as well as his own trailblazing research, Zimbardo details how situational forces and group dynamics can work in concert to make monsters out of decent men and women.</div>
+					The Lucifer Effect explains how—and the myriad reasons why—we are all susceptible to the lure of “the dark side.” Drawing on examples from history as well as his own trailblazing research, Zimbardo details how situational forces and group dynamics can work in concert to make monsters out of decent men and women.</div>
 				<ul class="postcard__tagbox">
 					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Philip G. Zimbardo</li>
 					<li class="tag__item"><i class="fas fa-clock mr-2"></i> April 17, 2007</li>
                     <button style={{borderRadius:"20px",height:"50px", width:"150px", marginTop:"30px" }}>view more</button>
-
-
 				</ul>
 			</div>
 		</article>
@@ -270,19 +236,16 @@ The Lucifer Effect explains how—and the myriad reasons why—we are all suscep
 				</div>
 				<div class="postcard__bar"></div>
 				<div class="postcard__preview-txt">"Around the corner, in this room
-The cupboard where you keep the broom
-Just beyond where you can see
-Or maybe where you eat your tea
-At school, yep he could be there too
-The man might have his eyes on you.
-
-Any way you get it, it rhymes. It's a rhyming horror story."</div>
+				The cupboard where you keep the broom
+				Just beyond where you can see
+				Or maybe where you eat your tea
+				At school, yep he could be there too
+				The man might have his eyes on you.
+				Any way you get it, it rhymes. It's a rhyming horror story."</div>
 				<ul class="postcard__tagbox">
 					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Isaac Lenkiewicz</li>
 					<li class="tag__item"><i class="fas fa-clock mr-2"></i>20 pages</li>
                     <button style={{borderRadius:"20px",height:"50px", width:"150px", marginTop:"30px" }}>view more</button>
-
-
 				</ul>
 			</div>
 		</article>
@@ -300,11 +263,11 @@ Any way you get it, it rhymes. It's a rhyming horror story."</div>
 				<div class="postcard__bar"></div>
 				<div class="postcard__preview-txt">A Deadly Influence studied English Literature at Birmingham University, before pursuing a career in finance. Following a ‘now or never’ moment, she applied for a Curtis Brown Creative course where she started writing her debut novel ALL IN HER HEAD which was published in April 2020. Her second novel, LOOK WHAT YOU MADE ME DO was published in April 2021 and both books have been optioned for TV.
 
-THE BEACH PARTY will be published by Viking in July 2023.
+				THE BEACH PARTY will be published by Viking in July 2023.
 
-Nikki lives near Guildford with her family and a cat who thinks she’s a dog.
+				Nikki lives near Guildford with her family and a cat who thinks she’s a dog.
 
-You can find out more about her on her website www.nikkismithauthor.com & she's active on twitter as @mrssmithmunday</div>
+				You can find out more about her on her website www.nikkismithauthor.com & she's active on twitter as @mrssmithmunday</div>
 				<ul class="postcard__tagbox">
 					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Mike Omer</li>
 					<li class="tag__item"><i class="fas fa-clock mr-2"></i> April 1, 2021</li>
@@ -314,10 +277,10 @@ You can find out more about her on her website www.nikkismithauthor.com & she's 
 		</article>
 	</div>
 </section>
-
 <section class="light" id='New'>
 	<div class="container py-2">
-		<div class="h1 text-center text-dark" id="pageHeaderTitle">New arrivals</div>
+		<center> <h1 style={{color:"black"}}>New Arrivals</h1></center>
+		<div class="h1 text-center text-dark" id="pageHeaderTitle"></div>
 
 		<article class="postcard light blue">
 			<a class="postcard__img_link" href="# ">
@@ -333,11 +296,11 @@ You can find out more about her on her website www.nikkismithauthor.com & she's 
 				<div class="postcard__bar"></div>
 				<div class="postcard__preview-txt">Nikki Smith studied English Literature at Birmingham University, before pursuing a career in finance. Following a ‘now or never’ moment, she applied for a Curtis Brown Creative course where she started writing her debut novel ALL IN HER HEAD which was published in April 2020. Her second novel, LOOK WHAT YOU MADE ME DO was published in April 2021 and both books have been optioned for TV.
 
-THE BEACH PARTY will be published by Viking in July 2023.
+					THE BEACH PARTY will be published by Viking in July 2023.
 
-Nikki lives near Guildford with her family and a cat who thinks she’s a dog.
+					Nikki lives near Guildford with her family and a cat who thinks she’s a dog.
 
-You can find out more about her on her website www.nikkismithauthor.com & she's active on twitter as @mrssmithmunday</div>
+					You can find out more about her on her website www.nikkismithauthor.com & she's active on twitter as @mrssmithmunday</div>
 				<ul class="postcard__tagbox">
 					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Emily St. John Mandel</li>
 					<li class="tag__item"><i class="fas fa-clock mr-2"></i> May 25th 2023</li>
@@ -359,16 +322,15 @@ You can find out more about her on her website www.nikkismithauthor.com & she's 
 				<div class="postcard__bar"></div>
 				<div class="postcard__preview-txt">Nikki Smith studied English Literature at Birmingham University, before pursuing a career in finance. Following a ‘now or never’ moment, she applied for a Curtis Brown Creative course where she started writing her debut novel ALL IN HER HEAD which was published in April 2020. Her second novel, LOOK WHAT YOU MADE ME DO was published in April 2021 and both books have been optioned for TV.
 
-THE BEACH PARTY will be published by Viking in July 2023.
+				THE BEACH PARTY will be published by Viking in July 2023.
 
-Nikki lives near Guildford with her family and a cat who thinks she’s a dog.
+				Nikki lives near Guildford with her family and a cat who thinks she’s a dog.
 
-You can find out more about her on her website www.nikkismithauthor.com & she's active on twitter as @mrssmithmunday</div>
+				You can find out more about her on her website www.nikkismithauthor.com & she's active on twitter as @mrssmithmunday</div>
 				<ul class="postcard__tagbox">
 					<li class="tag__item"><i class="fas fa-tag mr-2"></i>  R.F. Kuang</li>
 					<li class="tag__item"><i class="fas fa-clock mr-2"></i> May 28th 2023</li>
                     <button style={{borderRadius:"20px",height:"50px", width:"150px", marginTop:"30px",backgroundColor:"black", color:"white" }}>view more</button>
-
 				</ul>
 			</div>
 		</article>
@@ -386,11 +348,11 @@ You can find out more about her on her website www.nikkismithauthor.com & she's 
 				<div class="postcard__bar"></div>
 				<div class="postcard__preview-txt">Nikki Smith studied English Literature at Birmingham University, before pursuing a career in finance. Following a ‘now or never’ moment, she applied for a Curtis Brown Creative course where she started writing her debut novel ALL IN HER HEAD which was published in April 2020. Her second novel, LOOK WHAT YOU MADE ME DO was published in April 2021 and both books have been optioned for TV.
 
-THE BEACH PARTY will be published by Viking in July 2023.
+					THE BEACH PARTY will be published by Viking in July 2023.
 
-Nikki lives near Guildford with her family and a cat who thinks she’s a dog.
+					Nikki lives near Guildford with her family and a cat who thinks she’s a dog.
 
-You can find out more about her on her website www.nikkismithauthor.com & she's active on twitter as @mrssmithmunday</div>
+					You can find out more about her on her website www.nikkismithauthor.com & she's active on twitter as @mrssmithmunday</div>
 				<ul class="postcard__tagbox">
 					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Travis Baldree</li>
 					<li class="tag__item"><i class="fas fa-clock mr-2"></i>Aug 25th 2023</li>
@@ -413,11 +375,11 @@ You can find out more about her on her website www.nikkismithauthor.com & she's 
 				<div class="postcard__bar"></div>
 				<div class="postcard__preview-txt">Nikki Smith studied English Literature at Birmingham University, before pursuing a career in finance. Following a ‘now or never’ moment, she applied for a Curtis Brown Creative course where she started writing her debut novel ALL IN HER HEAD which was published in April 2020. Her second novel, LOOK WHAT YOU MADE ME DO was published in April 2021 and both books have been optioned for TV.
 
-THE BEACH PARTY will be published by Viking in July 2023.
+				THE BEACH PARTY will be published by Viking in July 2023.
 
-Nikki lives near Guildford with her family and a cat who thinks she’s a dog.
+				Nikki lives near Guildford with her family and a cat who thinks she’s a dog.
 
-You can find out more about her on her website www.nikkismithauthor.com & she's active on twitter as @mrssmithmunday</div>
+				You can find out more about her on her website www.nikkismithauthor.com & she's active on twitter as @mrssmithmunday</div>
 				<ul class="postcard__tagbox">
 					<li class="tag__item"><i class="fas fa-tag mr-2"></i>T. Kingfisher</li>
 					<li class="tag__item"><i class="fas fa-clock mr-2"></i> May 25th 2023</li>
